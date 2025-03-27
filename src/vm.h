@@ -5,6 +5,7 @@
 #include "value.h"
 
 #define STACK_MAX 256
+#define DEBUG_TRACE_EXECUTION true
 
 typedef struct {
     Chunk* chunk;

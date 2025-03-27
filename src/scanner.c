@@ -58,8 +58,8 @@ static void skip_whitespace(Scanner* scanner) {
                 advance(scanner);
                 break;
             case '*':
-                // Skip comments until end of line or end of file
-                advance(scanner); // Skip the *
+                // TODO: make the comments work.
+                advance(scanner);
                 while (peek(scanner) != '\n' && !is_at_end(scanner)) {
                     advance(scanner);
                 }

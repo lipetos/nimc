@@ -27,9 +27,11 @@ void start_parsing(Parser *p) {
         printf("Compilation failed.\n");
         return;
     }
-    VM vm;
-    init_vm(&vm);
-    InterpretResult result = interpret(&vm, p->chunk);
+
+    printf("Compiled source succesfully!\n");
+    VM *vm = malloc(sizeof(VM));
+    init_vm(vm);
+    InterpretResult result = interpret(vm, p->chunk);
     
     if (result == INTERPRET_OK) {
         printf("Program executed successfully.\n");
@@ -37,6 +39,5 @@ void start_parsing(Parser *p) {
         printf("Runtime error.\n");
     }
     
-    // Clean up
-    free_vm(&vm);
+    free_vm(vm);
 }

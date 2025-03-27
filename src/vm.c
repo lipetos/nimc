@@ -67,8 +67,6 @@ static InterpretResult run(VM* vm) {
                 char* name = (char*)READ_CONSTANT().as.string;
                 Value value = pop(vm);
                 
-                printf("Defining variable: %.*s\n", (int)strlen(name), name);
-                
                 vm->variables[vm->variable_count].name = strdup(name);
                 vm->variables[vm->variable_count].value = value;
                 vm->variable_count++;
@@ -87,10 +85,7 @@ static InterpretResult run(VM* vm) {
                 uint8_t index = READ_BYTE();
                 Value nameValue = vm->chunk->constants.values[index];
                 char* name = nameValue.as.string;
-                
-                printf("Getting variable: %.*s\n", (int)strlen(name), name);
-                
-                // Find variable
+
                 bool found = false;
                 Value value;
                 for (int i = 0; i < vm->variable_count; i++) {

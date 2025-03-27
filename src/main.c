@@ -5,7 +5,6 @@
 #include "parser.h"
 
 int main(int argc, char *argv[]) {
-    // Check for command-line argument
     if (argc < 2) {
         printf("Usage: %s <script>\n", argv[0]);
         exit(EXIT_FAILURE);

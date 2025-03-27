@@ -36,7 +36,6 @@ static void errorAtCurrent(const char* message) {
     errorAt(&parser.current, message);
 }
 
-// Scanner integration
 static void advance() {
     parser.previous = parser.current;
     
